@@ -1,3 +1,4 @@
+<!--
 <form accept-charset="UTF-8" method="POST" action="/users">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	<fieldset>
@@ -8,3 +9,17 @@
 		<input type="submit" value='submit'>
 	</fieldset>
 </form>
+-->
+
+
+<%= form_for @user do |f| %>
+	<%= f.label :username %>
+  <%= f.text_field :username %><br>
+  <%= f.label :email %>
+  <%= f.text_field :email, placeholder: "email" %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
+  <%= f.submit("Save") %>
+<% end %>
